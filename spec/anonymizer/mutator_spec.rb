@@ -150,7 +150,7 @@ module FakePipe
           expect(described_class.mutate('phone_ext', 'dont_care')).to match /[0-9]+/
         end
       end
-      
+
       context '#mutate_ip_v4_address' do
         it 'matches proper format' do
           expect((described_class.mutate('ip_v4_address', 'dont_care').split('.').map{|octet| octet.to_i}.max)).to be <= 255
@@ -183,17 +183,17 @@ module FakePipe
 
       context '#mutate_digit' do
         it 'matches proper format' do
-          expect(described_class.mutate('digit', 'dont_care')).to match /^[0-9]$/
+          expect(described_class.mutate('digit', 'dont_care').to_s).to match /^[0-9]$/
         end
       end
 
       context '#mutate_number' do
         it 'matches proper format' do
-          expect(described_class.mutate('number', 2)).to match /^[0-9]{2}$/
-          expect(described_class.mutate('number', 5)).to match /^[0-9]{5}$/
+          expect(described_class.mutate('number', 2).to_s).to match /^[0-9]{2}$/
+          expect(described_class.mutate('number', 5).to_s).to match /^[0-9]{5}$/
         end
       end
-      
+
       context '#mutate_zip_code' do
         it 'matches proper format' do
           expect(described_class.mutate('zip_code', 'dont_care')).to match /^[0-9]+[-]{0,1}[0-9]+$/
