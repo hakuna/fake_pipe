@@ -21,7 +21,6 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'activesupport'
   spec.add_dependency 'faker'
   spec.add_dependency 'csv'
-  spec.add_development_dependency 'bundler', '~> 2.5'
-  spec.add_development_dependency 'rake', '~> 13.2'
+  spec.add_development_dependency 'rake', '~> 13.0'
   spec.add_development_dependency 'rspec', '~> 3.0'
 end
