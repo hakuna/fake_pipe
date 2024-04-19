@@ -232,6 +232,16 @@ module FakePipe
       Faker::Address.zip_code
     end
 
+    # Faker::Date.birthday
+    def mutate_birthday(_)
+      Faker::Date.birthday(min_age: 18, max_age: 65)
+    end
+
+    # Faker::Date.backward
+    def mutate_date(_)
+      Faker::Date.backward(days: 365)
+    end
+
     # Reopen class to define aliases on module_function
     class << self
       alias mutate_guid mutate_uuid
