@@ -77,6 +77,8 @@ anon: url                   # Faker::Internet.url
 anon: user_name             # Faker::Internet.user_name
 anon: uuid                  # UUID
 anon: zip_code              # Faker::Address.zip_code
+anon: birthday              # Faker::Date.birthday(min_age: 18, max_age: 65)
+anon: date                  # Faker::Date.backward(days: 365)
 ```
 
 # Decisions
@@ -131,4 +133,3 @@ Thanks to the following contributors:
 
 The gem is available as open source under the terms of the [MIT
 License](http://opensource.org/licenses/MIT).
-

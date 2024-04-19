@@ -130,14 +130,14 @@ module FakePipe
     end
 
     # Faker::Number.decimal
-    def mutate_decimal_number(l_digits, precision=nil)
-      precision = l_digits unless precision.present?
-      Faker::Number.decimal(l_digits, precision)
+    def mutate_decimal_number(l_digits, r_digits=nil)
+      r_digits = l_digits unless r_digits.present?
+      Faker::Number.decimal(l_digits: l_digits, r_digits: r_digits)
     end
 
     #Faker::Number.number
     def mutate_number(digits)
-      Faker::Number.number(digits)
+      Faker::Number.number(digits: digits)
     end
 
     # Faker::Number.digit
@@ -230,6 +230,16 @@ module FakePipe
     # Faker::Address.zip_code
     def mutate_zip_code(_)
       Faker::Address.zip_code
+    end
+
+    # Faker::Date.birthday
+    def mutate_birthday(_)
+      Faker::Date.birthday(min_age: 18, max_age: 65)
+    end
+
+    # Faker::Date.backward
+    def mutate_date(_)
+      Faker::Date.backward(days: 365)
     end
 
     # Reopen class to define aliases on module_function
